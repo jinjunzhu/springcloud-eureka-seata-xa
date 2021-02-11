@@ -26,9 +26,6 @@ public class DataSourceConfiguration {
 
     @Bean("dataSourceProxy")
     public DataSource dataSource(DruidDataSource druidDataSource) {
-        // DataSourceProxy for AT mode
-        // return new DataSourceProxy(druidDataSource);
-
         // DataSourceProxyXA for XA mode
         return new DataSourceProxyXA(druidDataSource);
     }
